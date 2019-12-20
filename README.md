@@ -40,7 +40,7 @@ Spring Boot 使用的各种入门示例，以最简单、最实用为标准，�
 
 ## 关注公众号：java之旅
 
-![java之旅]()
+![java之旅](https://upload-images.jianshu.io/upload_images/2710833-68e7f600d062cfbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 另外关注后，回复：java，可领取 Java 知识体系、面试必看资料和BAT内推渠道。
 
