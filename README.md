@@ -23,6 +23,7 @@ Spring Boot 使用的各种入门示例，以最简单、最实用为标准，�
 - [spring-boot-schedule](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-schedule): Spring Boot 整合 定时任务 的示例
 - [spring-boot-redis](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-redis): Spring Boot 整合 redis 的示例
 - [spring-boot-rabbitmq](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-rabbitmq): Spring Boot 整合 RabbitMQ 的示例
+- [spring-boot-rabbitmq-multiple](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-rabbitmq-multiple): Spring Boot 连接多个 RabbitMQ 的示例
 - [spring-boot-mybatis](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-mybatis): Spring Boot 整合 Mybatis 的示例
 - [spring-boot-multiple-mybatis](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-multiple-mybatis) : Spring Boot 整合 多数据源 + Mybatis 的示例
 - [spring-boot-banner](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-banner) : Spring Boot 自定义启动Banner 的示例
