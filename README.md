@@ -35,6 +35,7 @@ Spring Boot 使用的各种入门示例，以最简单、最实用为标准，�
 - [Spring Boot 2(一)：简单搭建SpringBoot项目](https://www.jianshu.com/p/21fbf259eb5e)  
 - [Spring Boot 2(二)：SpringBoot和Swagger快速构建REST API并生成优美的API文档](https://www.jianshu.com/p/85a4886e5f2b)
 - [Spring Boot 2(三)：SpringBoot和Mybatis配置多数据源连接多个数据库](https://www.jianshu.com/p/735852145580)
+- [Spring Boot 2(四)：SpringBoot和RabbitMQ整合](https://www.jianshu.com/p/e19ab9bcecb9)
 
     `持续更新中...`
 
