@@ -44,9 +44,11 @@ public class MultipleRabbitMQConfig {
     public RabbitTemplate firstRabbitTemplate(
             @Qualifier("v2ConnectionFactory") ConnectionFactory connectionFactory,
             @Value("${v2.spring.rabbitmq.template.mandatory}") Boolean mandatory) {
-        RabbitTemplate iqianzhanRabbitTemplate = new RabbitTemplate(connectionFactory);
-        iqianzhanRabbitTemplate.setMandatory(mandatory);
-        return iqianzhanRabbitTemplate;
+        RabbitTemplate v2RabbitTemplate = new RabbitTemplate(connectionFactory);
+        v2RabbitTemplate.setMandatory(mandatory);
+        v2RabbitTemplate.setConfirmCallback();
+        v2RabbitTemplate.setReturnCallback();
+        return v2RabbitTemplate;
     }
 
     @Bean(name = "v2ContainerFactory")
@@ -100,6 +102,8 @@ public class MultipleRabbitMQConfig {
             @Value("${v1.spring.rabbitmq.template.mandatory}") Boolean mandatory) {
         RabbitTemplate publicRabbitTemplate = new RabbitTemplate(connectionFactory);
         publicRabbitTemplate.setMandatory(mandatory);
+        publicRabbitTemplate.setConfirmCallback();
+        publicRabbitTemplate.setReturnCallback();
         return publicRabbitTemplate;
     }
 
