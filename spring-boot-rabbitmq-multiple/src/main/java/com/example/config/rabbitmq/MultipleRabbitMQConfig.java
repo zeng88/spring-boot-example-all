@@ -1,9 +1,12 @@
 package com.example.config.rabbitmq;
 
+import com.alibaba.fastjson.JSON;
 import org.springframework.amqp.core.AcknowledgeMode;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,8 +49,22 @@ public class MultipleRabbitMQConfig {
             @Value("${v2.spring.rabbitmq.template.mandatory}") Boolean mandatory) {
         RabbitTemplate v2RabbitTemplate = new RabbitTemplate(connectionFactory);
         v2RabbitTemplate.setMandatory(mandatory);
-        v2RabbitTemplate.setConfirmCallback();
-        v2RabbitTemplate.setReturnCallback();
+        v2RabbitTemplate.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
+            @Override
+            public void confirm(CorrelationData correlationData, boolean ack, String s) {
+                if (!ack) {
+//                    LOGGER.info("{} 发送RabbitMQ消息 ack确认 失败: [{}]", this.name, JSON.toJSONString(object));
+                } else {
+//                    LOGGER.info("{} 发送RabbitMQ消息 ack确认 成功: [{}]", this.name, JSON.toJSONString(object));
+                }
+            }
+        });
+        v2RabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback() {
+            @Override
+            public void returnedMessage(Message message, int code, String s, String exchange, String routingKey) {
+//                LOGGER.error("{} 发送RabbitMQ消息returnedMessage，出现异常，Exchange不存在或发送至Exchange却没有发送到Queue中，message：[{}], code[{}], s[{}], exchange[{}], routingKey[{}]", new Object[]{this.name, JSON.toJSONString(message), JSON.toJSONString(code), JSON.toJSONString(s), JSON.toJSONString(exchange), JSON.toJSONString(routingKey)});
+            }
+        });
         return v2RabbitTemplate;
     }
 
@@ -100,11 +117,25 @@ public class MultipleRabbitMQConfig {
     public RabbitTemplate publicRabbitTemplate(
             @Qualifier("v1ConnectionFactory") ConnectionFactory connectionFactory,
             @Value("${v1.spring.rabbitmq.template.mandatory}") Boolean mandatory) {
-        RabbitTemplate publicRabbitTemplate = new RabbitTemplate(connectionFactory);
-        publicRabbitTemplate.setMandatory(mandatory);
-        publicRabbitTemplate.setConfirmCallback();
-        publicRabbitTemplate.setReturnCallback();
-        return publicRabbitTemplate;
+        RabbitTemplate v1RabbitTemplate = new RabbitTemplate(connectionFactory);
+        v1RabbitTemplate.setMandatory(mandatory);
+        v1RabbitTemplate.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
+            @Override
+            public void confirm(CorrelationData correlationData, boolean ack, String s) {
+                if (!ack) {
+//                    LOGGER.info("{} 发送RabbitMQ消息 ack确认 失败: [{}]", this.name, JSON.toJSONString(object));
+                } else {
+//                    LOGGER.info("{} 发送RabbitMQ消息 ack确认 成功: [{}]", this.name, JSON.toJSONString(object));
+                }
+            }
+        });
+        v1RabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback() {
+            @Override
+            public void returnedMessage(Message message, int code, String s, String exchange, String routingKey) {
+//                LOGGER.error("{} 发送RabbitMQ消息returnedMessage，出现异常，Exchange不存在或发送至Exchange却没有发送到Queue中，message：[{}], code[{}], s[{}], exchange[{}], routingKey[{}]", new Object[]{this.name, JSON.toJSONString(message), JSON.toJSONString(code), JSON.toJSONString(s), JSON.toJSONString(exchange), JSON.toJSONString(routingKey)});
+            }
+        });
+        return v1RabbitTemplate;
     }
 
     @Bean(name = "v1ContainerFactory")
