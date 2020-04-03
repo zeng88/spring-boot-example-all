@@ -29,6 +29,8 @@ Spring Boot 使用的各种入门示例，以最简单、最实用为标准，�
 - [spring-boot-banner](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-banner) : Spring Boot 自定义启动Banner 的示例
 - [spring-boot-admin-all](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-admin-all) : Spring Boot 整合 Admin 的示例
 - [spring-boot-actuator](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-actuator) : Spring Boot 整合 Actuator 的示例
+- [spring-boot-eureka](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-eureka) : Spring Boot 整合 Eureka 的示例
+- [spring-boot-hystrix](https://github.com/chinashuai/spring-boot-example-all/tree/master/spring-boot-hystrix) : Spring Boot 整合 Hystrix 的示例
 
 
 **参考文章**
@@ -42,7 +44,7 @@ Spring Boot 使用的各种入门示例，以最简单、最实用为标准，�
 
 ## 关注公众号：java之旅
 
-![微信公众号，关注下吧](https://upload-images.jianshu.io/upload_images/2710833-badb44a9921f4c8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![个人微信公众号:java之旅，关注下吧](https://upload-images.jianshu.io/upload_images/2710833-917dd89795bb306a.png)
 
 
 
