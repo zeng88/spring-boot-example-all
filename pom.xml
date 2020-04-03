@@ -21,8 +21,8 @@
         <module>spring-boot-admin-all</module>
         <module>spring-boot-actuator</module>
         <module>spring-boot-thymeleaf</module>
-        <module>spring-boot-multiple-rabbitmq</module>
         <module>spring-boot-rabbitmq-multiple</module>
+        <module>spring-boot-eureka</module>
     </modules>
 
 
