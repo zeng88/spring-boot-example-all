@@ -23,6 +23,8 @@
         <module>spring-boot-thymeleaf</module>
         <module>spring-boot-rabbitmq-multiple</module>
         <module>spring-boot-eureka</module>
+        <module>spring-boot-sharding</module>
+        <module>spring-boot-sharding-proxy</module>
     </modules>
 
 
